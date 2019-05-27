@@ -56,6 +56,7 @@ public class Main {
         //return distance(7, product(quotient(7,3), 3));
     }
 
+    /*
     static int power(int x, int y){
         if(x == 0){
             if(y == 0)
@@ -73,5 +74,24 @@ public class Main {
 
         return result;
     }
+    */
+
+    static int power(int x, int y){
+        if(x == 0){
+            if(y == 0)
+                return -1;
+            return 0;
+        }
+        if(y == 0 || x == 1)
+            return 1;
+
+
+        return power(x, y-1)*x;
+    }
+
+    //power(5,2)
+    //power(5,1)*5
+    //power(5,0)*5*5
+    //1*5*5
 
 }
