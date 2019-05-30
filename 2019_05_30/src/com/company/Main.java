@@ -33,4 +33,17 @@ public class Main {
             System.out.println();
         }
     }
+
+    static void printPrimeFactors(int x){
+
+        for (int i = 2; i < x/2; i++) {
+            if(x % i == 0){
+                int factor1 = i;
+                int factor2 = x / i;
+                printPrimeFactors(factor1);
+                printPrimeFactors(factor2);
+                break;
+            }
+        }
+    }
 }
