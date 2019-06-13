@@ -4,17 +4,20 @@ public class Circle {
     private int x, y, radius;
 
 
-    /*
     public Circle(){
-        x = 20;
-        y = 20;
-        radius = 10;
+        this(20, 20);
     }
-    */
 
     public Circle(int x, int y){
+        this(x, y, 10);
+
+    }
+
+    public Circle(int x, int y, int radius){
         this.x = x;
         this.y = y;
+        this.radius = 1;
+        setRadius(radius);
     }
 
     public int getX(){
@@ -35,6 +38,10 @@ public class Circle {
     }
 
 
+    /**
+     * sets the radius of the circle
+     * @param radius the radius of the circle in meters, non negative value
+     */
     public void setRadius(int radius){
         if(radius < 0)
             return;
@@ -47,15 +54,32 @@ public class Circle {
         return radius;
     }
 
+
+    /**
+     * calculates the area of the circle
+     * @return the area of the circle
+     */
     public double area(){
         return Math.PI * radius * radius;
     }
 
-    void fillColor(){
+
+    public void fillColor(int red, int green, int blue){
+
+    }
+
+
+    public void fillColor(float hue, float saturation, float brightness){
+
     }
 
     public static void myFunc(){
 
     }
 
+
+    @Override
+    public String toString() {
+        return "center: (" + x + "," + y + ") and radius: " + radius;
+    }
 }
